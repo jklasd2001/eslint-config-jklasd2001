@@ -1,0 +1,28 @@
+{
+    "name": "eslint-config-jklasd2001",
+    "version": "0.0.1",
+    "description": "jklasd2001's ESLint config",
+    "main": "index.js",
+    "author": "YoungSu Kim (jklasd2001@gmail.com)",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/jklasd2001/eslint-config-jklasd2001"
+    },
+    "files": [
+      "index.js"
+    ],
+    "dependencies": {
+      "@typescript-eslint/eslint-plugin": "^5.36.1",
+      "@typescript-eslint/parser": "^5.36.1",
+      "eslint": "^8.23.0",
+      "eslint-config-prettier": "^8.5.0",
+      "eslint-import-resolver-typescript": "^3.5.0",
+      "eslint-plugin-import": "^2.26.0",
+      "eslint-plugin-prettier": "^4.2.1",
+      "eslint-plugin-react": "^7.31.1",
+      "eslint-plugin-react-hooks": "^4.6.0",
+      "eslint-plugin-unused-imports": "^2.0.0",
+      "prettier": "^2.7.1"
+    }
+  }
