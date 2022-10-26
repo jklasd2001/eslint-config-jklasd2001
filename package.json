@@ -1,5 +1,5 @@
 {
-  "name": "eslint-config-jklasd2001",
+  "name": "eslint-config-jklasd2001s",
   "version": "0.0.1",
   "description": "jklasd2001's ESLint config",
   "repository": {
@@ -16,6 +16,9 @@
     "changeset": "changeset",
     "ci:version": "changeset version",
     "ci:publish": "changeset publish"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.41.0",
