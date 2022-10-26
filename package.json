@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-jklasd2001",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "description": "jklasd2001's ESLint config",
   "repository": {
     "type": "git",
@@ -12,6 +12,11 @@
   "files": [
     "index.js"
   ],
+  "scripts": {
+    "changeset": "changeset",
+    "ci:version": "changeset version",
+    "ci:publish": "changeset publish"
+  },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.41.0",
     "@typescript-eslint/parser": "^5.41.0",
@@ -24,5 +29,9 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-unused-imports": "^2.0.0",
     "prettier": "^2.7.1"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "^0.4.7",
+    "@changesets/cli": "^2.25.0"
   }
 }

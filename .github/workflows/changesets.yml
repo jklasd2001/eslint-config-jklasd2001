@@ -1,0 +1,46 @@
+name: Changesets
+
+# .changeset, packages 디렉토리의 변경사항들이 main 브랜치에 push될 때 Action을 실핸한다.
+on:
+  push:
+    paths:
+      - ".changeset/**"
+    branches:
+      - main
+
+# 단일 실행 및 작업만 진행되도록 할 수 있는 키
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      # 레포지토리에 체크아웃하여 소스를 가져온다.
+      - name: Checkout branch
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      # 노드 설치
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "lts/*"
+      # pnpm global install
+      - name: install pnpm
+        run: npm i pnpm@latest -g
+      # 의존성 설치한다.
+      - name: Install dependencies
+        run: pnpm install
+      # Changesets에서 제공하는 Action 사용
+      - name: Create release Pull Request or Publish to Github Packages
+        uses: changesets/action@v1
+        with:
+          version: pnpm ci:version
+          commit: "chore: update versions"
+          title: "chore: update versions"
+          publish: pnpm ci:publish
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
